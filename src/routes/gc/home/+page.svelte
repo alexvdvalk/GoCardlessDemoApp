@@ -1,11 +1,5 @@
 <script lang="ts">
-  import type { PageData } from "./$types";
-
-  export let data: PageData;
   export let form;
-
-  // $: console.log("data", data);
-  $: console.log("form", form);
 </script>
 
 <!-- {JSON.stringify(data.billingRequests.)} -->

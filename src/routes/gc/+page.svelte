@@ -1,9 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import type { PageData } from "./$types";
   import { PUBLIC_GCCIENTID } from "$env/static/public";
 
-  export let data: PageData;
   const clientId = PUBLIC_GCCIENTID;
 
   $: redirectUrl = $page.url.origin;

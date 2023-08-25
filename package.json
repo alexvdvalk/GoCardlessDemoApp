@@ -30,6 +30,7 @@
   "type": "module",
   "dependencies": {
     "@cord-sdk/server": "^1.4.0",
+    "@sveltejs/adapter-vercel": "^3.0.3",
     "gocardless-nodejs": "^3.14.0"
   }
 }

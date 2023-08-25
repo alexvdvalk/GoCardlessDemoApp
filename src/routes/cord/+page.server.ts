@@ -1,7 +1,7 @@
 import type { PageServerLoad } from "../$types";
 import type { Actions } from "../$types";
 import { getClientAuthToken } from "@cord-sdk/server";
-import { PUBLIC_CORD_KEY, PUBLIC_CORD_SECRET } from "$env/static/public";
+import { env } from "$env/dynamic/public";
 
 export const load = (async () => {
   return {};
@@ -18,7 +18,7 @@ export const actions = {
 } satisfies Actions;
 
 const getKey = (username: string) => {
-  return getClientAuthToken(PUBLIC_CORD_KEY, PUBLIC_CORD_SECRET, {
+  return getClientAuthToken(env.PUBLIC_CORD_KEY, env.PUBLIC_CORD_SECRET, {
     // The user ID can be any identifier that makes sense to your application.
     // As long as it's unique per-user, Cord can use it to represent your user.
     user_id: username,

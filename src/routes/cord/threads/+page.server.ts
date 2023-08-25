@@ -1,9 +1,9 @@
 import { getServerAuthToken } from "@cord-sdk/server";
 import type { PageServerLoad } from "./$types";
-import { PUBLIC_CORD_KEY, PUBLIC_CORD_SECRET } from "$env/static/public";
+import { env } from "$env/dynamic/public";
 
 export const load = (async ({ fetch }) => {
-  const token = getServerAuthToken(PUBLIC_CORD_KEY, PUBLIC_CORD_SECRET);
+  const token = getServerAuthToken(env.PUBLIC_CORD_KEY, env.PUBLIC_CORD_SECRET);
   const myHeaders = new Headers();
   myHeaders.append("Authorization", `Bearer ${token}`);
   const threads = await fetch("https://api.cord.com/v1/threads/", {
